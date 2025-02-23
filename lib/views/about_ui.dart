@@ -42,27 +42,37 @@ class _AboutUIState extends State<AboutUI> {
             SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             Text(
               '6652410030',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width * 0.05),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.003),
             Text(
               'บรรณรุจน์ ลิ้มสมวงศ์',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width * 0.05),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.003),
             Text(
               's6652410030@sau.ac.th',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width * 0.05),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.003),
             Text(
               'DTI',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width * 0.05),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.003),
             Text(
               'ศิลปศาสตร์และวิทยาศาสตร์',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width * 0.05),
             ),
           ],
         ),
