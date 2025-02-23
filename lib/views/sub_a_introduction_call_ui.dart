@@ -10,47 +10,41 @@ class SubAIntroductionCallUI extends StatefulWidget {
 class _SubAIntroductionCallUIState extends State<SubAIntroductionCallUI> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.13,
+    return Center(
+      child: Column(
+        children: [
+          Image.asset(
+            'assets/images/image1.png',
+            height: MediaQuery.of(context).size.height * 0.4,
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+          Text.rich(
+            TextSpan(
+              text:
+                  'เมื่อต้องเดินทางทั้งในเมือง ออกต่างจังหวัด\nจะใกล้หรือไกลเพียงใด\nสอบถามข้อมูลการเดินทาง การจราจร\nทางด่วน ทางหลัก ทางรอง\nเส้นทางเลี่ยงการจราจรติดขัด\nข้อมูลรถทัวร์ รถไฟ ขสมก. BTS MRT\nชักช้าอยู่ใย ',
+              children: [
+                TextSpan(
+                  text: "โทรเลย!!!",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
-            Image.asset(
-              'assets/images/image1.png',
-              width: MediaQuery.of(context).size.width * 0.5,
-              height: MediaQuery.of(context).size.height * 0.2,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+          Text(
+            'สายด่วน\nการเดินทาง',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
-            Text.rich(
-              textAlign: TextAlign.center,
-              TextSpan(
-                text:
-                    'เมื่อต้องเดินทางทั้งในเมือง ออกต่างจังหวัด\nจะใกล้หรือไกลเพียงใด\nสอบถามข้อมูลการเดินทาง การจราจร\nทางด่วน ทางหลัก ทางรอง\nเส้นทางเลี่ยงการจราจรติดขัด\nข้อมูลรถทัวร์ รถไฟ ขสมก. BTS MRT\n ชักช้าอยู่ใย',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-                children: [
-                  TextSpan(
-                      text: ' โทรเลย!!',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                          color: Colors.red)),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
-            Text(
-              'สายด่วน\nการเดินทาง',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

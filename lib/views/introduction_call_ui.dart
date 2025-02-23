@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:thai_hotline_app/views/sub_a_home_ui.dart';
+import 'package:thai_hotline_app/views/home_ui.dart';
 import 'package:thai_hotline_app/views/sub_a_introduction_call_ui.dart';
 import 'package:thai_hotline_app/views/sub_b_introduction_call_ui.dart';
 import 'package:thai_hotline_app/views/sub_c_introduction_call_ui.dart';
@@ -17,52 +17,32 @@ class _IntroductionCallUIState extends State<IntroductionCallUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IntroductionScreen(
-        pages: [
-          PageViewModel(
-            title: '',
-            bodyWidget: Builder(builder: (BuildContext context) {
-              return const SubAIntroductionCallUI();
-            }),
-          ),
-          PageViewModel(
-            title: '',
-            bodyWidget: Builder(builder: (BuildContext context) {
-              return const SubBIntroductionCallUI();
-            }),
-          ),
-          PageViewModel(
-            title: '',
-            bodyWidget: Builder(builder: (BuildContext context) {
-              return const SubCIntroductionCallUI();
-            }),
-          ),
-          PageViewModel(
-            title: '',
-            bodyWidget: Builder(builder: (BuildContext context) {
-              return const SubDIntroductionCallUI();
-            }),
-          ),
-        ],
-        showSkipButton: true,
-        skip: Text(
-          'ข้าม',
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.05,
         ),
-        showNextButton: true,
-        next: Icon(
-          Icons.arrow_forward_ios,
+        child: IntroductionScreen(
+          pages: [
+            PageViewModel(title: '', bodyWidget: SubAIntroductionCallUI()),
+            PageViewModel(title: '', bodyWidget: SubBIntroductionCallUI()),
+            PageViewModel(title: '', bodyWidget: SubCIntroductionCallUI()),
+            PageViewModel(title: '', bodyWidget: SubDIntroductionCallUI()),
+          ],
+          showSkipButton: true,
+          skip: Text("ข้าม", style: TextStyle(color: Colors.black)),
+          showNextButton: true,
+          next: Icon(Icons.arrow_forward_ios, color: Colors.black),
+          showDoneButton: true,
+          done: Text("โทรเลย", style: TextStyle(color: Colors.black)),
+          //? Navigator to SubAHomeUI
+          onDone: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomeUI()),
+            );
+          },
+          scrollPhysics: ClampingScrollPhysics(),
         ),
-        showDoneButton: true,
-        done: Text('หน้าหลัก'),
-        onDone: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SubAHomeUI(),
-            ),
-          );
-        },
-        scrollPhysics: ClampingScrollPhysics(),
       ),
     );
   }
